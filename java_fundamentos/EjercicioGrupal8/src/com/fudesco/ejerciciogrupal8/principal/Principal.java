@@ -1,5 +1,6 @@
 package com.fudesco.ejerciciogrupal8.principal;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Principal {
@@ -18,46 +19,59 @@ public class Principal {
 		
 		//datos perfil Administrativo
 		String funcion,nombreSuperior;
+		String evaluacionTipo;
 	
 		Scanner entrada = new Scanner(System.in);
-		
-		System.out.print("Ingrese el tipo de usuario para completar los datos: ");
-		tipo = entrada.next();
-		String evaluacionTipo = tipo.toLowerCase();
-		
-		switch (evaluacionTipo) {
-		case "cliente": {
+		do {
+			System.out.print("Ingrese el tipo de usuario para completar los datos, las opciones son Cliente, Profesional, Administrativo: ");
+			tipo = entrada.next();
+			evaluacionTipo = tipo.toUpperCase();
 			
-			System.out.print("Ingrese direccion del Cliente: ");
+		}while((!evaluacionTipo.equals("CLIENTE"))&& (!evaluacionTipo.equals("PROFESIONAL"))&&(!evaluacionTipo.equals("ADMINISTRATIVO")));
+		
+		
+		ArrayList<String> usuarios = new ArrayList();
+		usuarios.add("Usuario Tipo: " + evaluacionTipo);
+		registrarUsuario(usuarios);
+		
+
+				
+		switch (evaluacionTipo) {
+		case "CLIENTE": {
+			
+			System.out.print("\nIngrese direccion del Cliente: ");
 			direccion = entrada.next();
-			System.out.print("Igrese telefono del Cliente: ");
+			usuarios.add("Direccion: " + direccion);
+
+			System.out.print("\nIgrese telefono del Cliente: ");
 			telefono = entrada.next();
-			System.out.print("Ingrese cantidad de empleados: ");
+			usuarios.add("Telefono: "+ telefono);
+			System.out.print("\nIngrese cantidad de empleados: ");
 			cantidadEmpleados = entrada.nextInt();
+			usuarios.add("Cantidad de empleados: " + cantidadEmpleados );
 			entrada.close();
 			
 			break;
 		}
-		case "profesional": {
+		case "PROFESIONAL": {
 			
-			System.out.print("Ingrese direccion del Profesional: ");
-			direccion = entrada.next();
-			
-			System.out.print("Ingrese años de experiencia Profesional: ");
+			System.out.print("\nIngrese años de experiencia Profesional: ");
 			anioExperiencia = entrada.nextInt();
-			//entrada.close();
-			System.out.print("Ingrese departamento del Profesional: ");
+			usuarios.add("Años de experiencia: "+ anioExperiencia);
+			System.out.print("\nIngrese departamento del Profesional: ");
 			departamento = entrada.next();
+			usuarios.add("Departamento: "+ departamento);
 			
 			break;
 		}
-		case "administrativo": {
+		case "ADMINISTRATIVO": {
 			
-			System.out.print("Ingrese funcion del Administrativo: ");
+			System.out.print("\nIngrese funcion del Administrativo: ");
 			funcion = entrada.next();
-			
-			System.out.print("Ingrese nombre del Superior del Administrativo: ");
+			usuarios.add("Funcion: "+ funcion);
+			System.out.print("\nIngrese nombre del Superior del Administrativo: ");
 			nombreSuperior = entrada.next();
+			usuarios.add("Nombre del superior: "+ nombreSuperior);
 			
 			break;
 		}
@@ -65,30 +79,38 @@ public class Principal {
 			System.out.println("\ntipo no encontrado");
 		}
 		
-		System.out.println("fin");
 	
+		System.out.println("");
+		
+		for(String usuario: usuarios) {
+			System.out.println(usuario);
+		}
 	}
 	
 	
-	public static void registrarUsuario() {
-		String nombre,fechaNacimiento,run,tipo;
+	public static void registrarUsuario(ArrayList<String> usuario) {
+		String nombre,fechaNacimiento,run;
 		
 		Scanner entrada = new Scanner(System.in);
 		
+		//ArrayList<String> usuario = new ArrayList();
+
+		System.out.print("\nIngrese datos básicos del usuario\n");
 		
-		System.out.println("Ingrese datos básicos del usuario\n");
-		
-		System.out.print("Ingrese nombre del usuario: ");
+		System.out.print("\nIngrese nombre del usuario: ");
 		nombre = entrada.next();
-		System.out.println("\nnombre usuario "+nombre+" registrado");
+		usuario.add("Nombre: " + nombre);
 		
-		System.out.print("Ingrese fecha de naciemiento del usuario: ");
+
+		System.out.print("\nIngrese fecha de naciemiento del usuario: ");
 		fechaNacimiento = entrada.next();
-		System.out.println("\nnombre usuario "+fechaNacimiento+" registrado");
+		usuario.add("Fecha Nacimiento: " + fechaNacimiento);
 		
-		System.out.print("Ingrese run del usuario: ");
+
+		System.out.print("\nIngrese run del usuario: ");
 		run = entrada.next();
-		System.out.println("\nrun usuario "+run+" registrado");
+		usuario.add("Rut: " +run);
 	}
+	
 
 }
