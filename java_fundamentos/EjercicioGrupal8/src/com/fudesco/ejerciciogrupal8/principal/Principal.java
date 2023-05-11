@@ -55,21 +55,10 @@ public class Principal {
 		}
 		case "PROFESIONAL": {
 			
-<<<<<<< HEAD
-			System.out.println("Ingrese direccion del Profesional: ");
-			direccion = entrada.next();
-			direccion+= entrada.nextLine();
-			
-			System.out.println("Ingrese años de experiencia Profesional: ");
-			anioExperiencia = Integer.parseInt(entrada.next());
-			
-			System.out.println("Ingrese departamento del Profesional: ");
-=======
 			System.out.print("\nIngrese años de experiencia Profesional: ");
 			anioExperiencia = entrada.nextInt();
 			usuarios.add("Años de experiencia: "+ anioExperiencia);
 			System.out.print("\nIngrese departamento del Profesional: ");
->>>>>>> 52188642930749e2e9edb61a6e8a3e8890065898
 			departamento = entrada.next();
 			usuarios.add("Departamento: "+ departamento);
 			
