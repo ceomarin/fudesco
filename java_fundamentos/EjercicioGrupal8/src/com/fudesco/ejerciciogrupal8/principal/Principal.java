@@ -40,13 +40,14 @@ public class Principal {
 		}
 		case "profesional": {
 			
-			System.out.print("Ingrese direccion del Profesional: ");
+			System.out.println("Ingrese direccion del Profesional: ");
 			direccion = entrada.next();
+			direccion+= entrada.nextLine();
 			
-			System.out.print("Ingrese años de experiencia Profesional: ");
-			anioExperiencia = entrada.nextInt();
-			//entrada.close();
-			System.out.print("Ingrese departamento del Profesional: ");
+			System.out.println("Ingrese años de experiencia Profesional: ");
+			anioExperiencia = Integer.parseInt(entrada.next());
+			
+			System.out.println("Ingrese departamento del Profesional: ");
 			departamento = entrada.next();
 			
 			break;
