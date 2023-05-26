@@ -49,10 +49,7 @@ build/
 .ionide
 
 ### Eclipse ###
-<<<<<<< HEAD
 *.metadata
-=======
->>>>>>> develop
 .metadata
 bin/
 tmp/
