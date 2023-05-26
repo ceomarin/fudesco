@@ -49,6 +49,7 @@ build/
 .ionide
 
 ### Eclipse ###
+*.metadata
 .metadata
 bin/
 tmp/
