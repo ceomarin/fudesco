@@ -1,0 +1,49 @@
+package com.fudesco.ejerciciogrupal8.principal;
+
+import java.util.Scanner;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		String nombre,fechaNacimiento,run,tipo;
+	
+		Scanner entrada = new Scanner(System.in);
+		
+		
+		System.out.println("Ingrese datos básicos del usuario\n");
+		
+		System.out.print("Ingrese nombre del usuario: ");
+		nombre = entrada.next();
+		System.out.println("\nnombre usuario "+nombre+" registrado");
+		
+		System.out.print("Ingrese fecha de naciemiento del usuario: ");
+		fechaNacimiento = entrada.next();
+		System.out.println("\nnombre usuario "+fechaNacimiento+" registrado");
+		
+		System.out.print("Ingrese run del usuario: ");
+		run = entrada.next();
+		System.out.println("\nrun usuario "+run+" registrado");
+		
+		
+		System.out.print("Ingrese el tipo de usuario: ");
+		tipo = entrada.next();
+		System.out.println("\ntipo de usuario "+tipo+" registrado");
+		
+		switch (tipo) {
+		case "cliente": {
+			System.out.println("\ntipo de usuario "+tipo+" registrado");
+			break;
+		}
+		default:
+			System.out.println("\ntipo no encontrado");
+		}
+		
+	
+	}
+	
+	
+	public static void registrarUsuario() {
+		System.out.println();
+	}
+
+}
