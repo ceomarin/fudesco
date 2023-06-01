@@ -12,7 +12,7 @@ public class Listado {
 
     public void getListaUsuarios() {
        for (Usuario usuario : listaUsuarios) {
-         System.out.println(usuario.analizarUsuario());
+         usuario.analizarUsuario();
          System.out.println("\n");
        }
     }
